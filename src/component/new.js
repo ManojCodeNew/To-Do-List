@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 // import Main from './main'
 export default function New() {
+    const getitem=()=>{
+        const item=JSON.parse(localStorage.getItem('item'))
+        if (item) {
+            return JSON.parse(localStorage.getItem('item'))
+        }
+        else{
+            return []
+        }
+        
+    }
     const [text, settext] = useState("Hai Developer!!!");
-    const [savedtext, setsavedtext] = useState([])
+    const [savedtext, setsavedtext] = useState(getitem())
+// setsavedtext(localStorage.getItem('item'));
+console.log(savedtext);
+
     const Onchangetext = (event) => {//here event is variable for storing target.value data
         settext(event.target.value)
     }
@@ -18,6 +31,9 @@ export default function New() {
     const clear=(e)=>{
         settext('')
     }
+    useEffect (()=>{
+        localStorage.setItem('item',JSON.stringify(savedtext))
+    },[savedtext])
 
     return (
         <div className="bg-black p-7">
