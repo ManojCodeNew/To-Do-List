@@ -42,7 +42,7 @@ export default function New(props) {
     },[savedtext])
 
     return (
-        <div className="bg-rgba(0,0,0,0.5) backdrop-blur-10 p-10 rounded-xl">
+        <div className="bg-black backdrop-blur-10 p-10 rounded-xl">
             <h3 className="text-white text-center font-serif font-extrabold text-2xl">TO DO LIST</h3>
             <div className=" m-5 text-center">
             <input value={text} onChange={Onchangetext} type="text" className="border-black m-3 p-3 rounded-full " placeholder="Enter Your Text..." />
