@@ -14,10 +14,9 @@ export default function New(props) {
         }
         
     }
-    const [text, settext] = useState("props.code");
+    const [text, settext] = useState();
     const [savedtext, setsavedtext] = useState(getitem())
-// setsavedtext(localStorage.getItem('item'));
-// console.log(savedtext);
+
 
     const Onchangetext = (event) => {//here event is variable for storing target.value data
         settext(event.target.value)
@@ -43,13 +42,18 @@ export default function New(props) {
     },[savedtext])
 
     return (
-        <div className="bg-black p-10 rounded-xl">
+        <div className="bg-rgba(0,0,0,0.5) backdrop-blur-10 p-10 rounded-xl">
             <h3 className="text-white text-center font-serif font-extrabold text-2xl">TO DO LIST</h3>
             <div className=" m-5 text-center">
             <input value={text} onChange={Onchangetext} type="text" className="border-black m-3 p-3 rounded-full " placeholder="Enter Your Text..." />
             <button className="text-white bg-green-900 p-2 rounded-lg" onClick={save}>Save</button>
             <button className="bg-red-600 text-white p-2 rounded-lg ml-3" onClick={clear}>Clear</button>
-            </div>
+        {/* </div> */}
+        {/* px-2 py-1 these are used to reduse the div size */}
+        {/* <div className=" text-white  px-2 py-1 rounded cursor-pointer  hover:bg-white inline-block text-sm">
+        <h2 className=" text-white hover:text-black text-xl">List's</h2>
+        <hr className="border-black"/> */}
+        {/* </div> */}
             {savedtext.map((saved,key) => (
                 <div >
                 <div className="border-gray-100 border-solid border p-3 m-3 rounded-md">
@@ -58,6 +62,7 @@ export default function New(props) {
                 <button onClick={remove} value={saved} className="bg-red-600 text-black hover:bg-white  p-2 rounded-lg ">Remove</button>
                 </div>
             ))}
+        </div>
         </div>
     )
 }

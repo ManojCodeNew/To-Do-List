@@ -23,11 +23,22 @@ export default function Main(props) {
         setfinalcode([...finalcode,code])
         console.log(finalcode);
     }
-    
+
+    // useRef
+    // const useref=useRef();
+    // const recentfileclick=(e)=>{
+    //     const clicked_data=useref.current.textContent;
+    //     // console.log(clicked_data);
+    //     setcode(clicked_data)
+    //     console.log(e);
+    // }
+
+
     // local storage for storing user name
     useEffect(()=>{
     localStorage.setItem('userids',JSON.stringify(finalcode))
     },[finalcode])
+ 
     return (
         <div>
             <div className="m-5 pl-3">
@@ -43,7 +54,10 @@ export default function Main(props) {
 
             {/* this includes function  */}
             <p>{finalcode.includes(code)?<New code={code}/>:<p className="text-center">Not Found !!!</p>}</p>
-            {finalcode.map((item)=><p>{item}</p>)}
+            <div className="bg-blue-900 p-2 rounded-lg mt-5">
+            <h1 className=" pl-2 m-2 bg-red-900 px-2 py-2  inline-block rounded-md text-white ">Recent Notes</h1>
+            {finalcode.map((item,key)=><p className="m-2 p-1 rounded-lg hover:text-black hover:font-bold hover:bg-gray-400 border border-solid border-white text-white  text-center ">{item}</p>)}
+            </div>
         </div>
 
     )
