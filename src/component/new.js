@@ -56,6 +56,7 @@ export default function New(props) {
         {/* </div> */}
         <div className="text-left">
         <h2 className="text-white  text-md drop-shadow-xl bg-teal-700 p-2.5 rounded-full mt-5  inline-block font-extralight">{props.code}</h2>
+        <hr className="mt-3 border-gray-600 h-3"/>
 
         </div>
             {savedtext.map((saved,key) => (
