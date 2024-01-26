@@ -55,12 +55,14 @@ export default function Main(props) {
 
             {/* this includes  function  *** */}
             <p>{finalcode.includes(code)?<New code={code}/>:<p className="text-center">Not Found !!!</p>}</p>
-            <div className="p-2 rounded-lg mt-5">
+            {/* <div className="p-2 rounded-lg mt-5">
             <h1 className=" pl-2 m-2 bg-red-900 px-2 py-2  inline-block rounded-md text-white ">Recent Notes</h1>
             <div>
-            {finalcode.map((item,key)=><p onClick={()=>setcode(item)} className="m-2 p-1 cursor-pointer rounded-lg hover:text-black hover:font-bold hover:bg-gray-400 border border-solid border-gray-400 text-black inline-block ">{item}</p>)}
+            {finalcode.map((item,key)=><p onClick={()=>setcode(item)} className="m-2 p-1 cursor-pointer rounded-lg hover:text-black hover:font-bold hover:bg-gray-400 border border-solid border-gray-400 text-black inline-block active">{item}</p>)}
+
             </div>
-            </div>
+            <button onClick={()=>setfinalcode(' ')}>Clear</button>
+            </div> */}
         </div>
 
     )
