@@ -15,7 +15,6 @@ export default function Main(props) {
             return []
         }
     }
-   
     // participant names
     const [finalcode, setfinalcode] = useState(getUserIds())
     const onchangecode = (e) => {
