@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import New from "./new";
-import { useState } from "react";
-
+import Data from "./data";
+import { useState} from "react";
 // ***
+
 export default function Main(props) {
     const [code, setcode] = useState()
     const getUserIds=()=>{
@@ -14,14 +15,16 @@ export default function Main(props) {
             return []
         }
     }
+   
     // participant names
     const [finalcode, setfinalcode] = useState(getUserIds())
     const onchangecode = (e) => {
         setcode(e.target.value)
     }
+
     const click_for_new=()=>{
         setfinalcode([...finalcode,code])
-        console.log(finalcode);
+        // console.log(finalcode);
     }
 
     // useRef
@@ -54,7 +57,7 @@ export default function Main(props) {
 
 
             {/* this includes  function  *** */}
-            <p>{finalcode.includes(code)?<New code={code}/>:<p className="text-center">Not Found !!!</p>}</p>
+            <p>{finalcode.includes(code)?<New code={code} />:<p className="text-center">Not Found !!!</p>}</p>
             {/* <div className="p-2 rounded-lg mt-5">
             <h1 className=" pl-2 m-2 bg-red-900 px-2 py-2  inline-block rounded-md text-white ">Recent Notes</h1>
             <div>
@@ -63,6 +66,8 @@ export default function Main(props) {
             </div>
             <button onClick={()=>setfinalcode(' ')}>Clear</button>
             </div> */}
+            {finalcode.map((item,key)=><Data data={item}/>)}
+
         </div>
 
     )

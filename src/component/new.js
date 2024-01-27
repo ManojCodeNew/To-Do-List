@@ -2,11 +2,12 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 // import Main from './main'
 export default function New(props) {
-    console.log(props.code);
+    // console.log(props);
     // Storing individuals data
     const getitem=()=>{
         const item=JSON.parse(localStorage.getItem(`${props.code}`))
         if (item) {
+            // storing data after shutdown your pc 
             return JSON.parse(localStorage.getItem(`${props.code}`))
         }
         else{
@@ -31,8 +32,8 @@ export default function New(props) {
     const updatedsaveditem = savedtext.filter((item) => item !== data);
 
         setsavedtext(updatedsaveditem)
-        console.log(data);
-    console.log(e.target.value);
+        // console.log(data);
+    // console.log(e.target.value);
     }
     const clear=(e)=>{
         settext('')
@@ -49,13 +50,15 @@ export default function New(props) {
             <button className="text-white bg-green-900 p-2 rounded-lg hover:rounded-full" onClick={save}>Save</button>
             <button className="bg-red-600 rounded-lg hover:rounded-full text-white p-2  ml-3" onClick={clear}>Clear</button>
         {/* </div> */}
-        {/* px-2 py-1 these are used to reduse the div size */}
+        {/* inline-block these are used to reduse the div size */}
         {/* <div className=" text-white  px-2 py-1 rounded cursor-pointer  hover:bg-white inline-block text-sm">
         <h2 className=" text-white hover:text-black text-xl">List's</h2>
         <hr className="border-black"/> */}
         {/* </div> */}
+
+        {/* List main heading */}
         <div className="text-left">
-        <h2 className="text-white  text-md drop-shadow-xl bg-teal-700 p-2.5 rounded-full mt-5  inline-block font-extralight">{props.code}</h2>
+        <h2 className="text-white  text-lg font-bold drop-shadow-xl bg-teal-700 p-2.5 rounded-full mt-5  inline-block ">{props.code}</h2>
         <hr className="mt-3 border-gray-600 h-3"/>
 
         </div>
