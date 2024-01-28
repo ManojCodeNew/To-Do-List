@@ -1,6 +1,6 @@
 import './App.css';
 import Navbar from './component/navbar';
-// import New from './component/new.js'
+import Data from './component/data.js'
 import Main from "./component/main.js";
 import  History  from "./component/History.js";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -12,11 +12,14 @@ function App(props) {
       <Navbar/>
       <Routes>
         <Route path='/' element={<Main text="Enter Your Name With Id" Eg="Eg:ABC123"/>}></Route>
-        <Route path='/history' element={<History/>} >
+        <Route path='/history' element={<Data><History/></Data>} >
         </Route>
       </Routes>
       {/* <New/> */}
     </BrowserRouter>
+    {/* <Data>
+      <History/>
+    </Data> */}
     </div>
   );
 }

@@ -66,7 +66,7 @@ export default function Main(props) {
             <button onClick={()=>setfinalcode(' ')}>Clear</button>
             </div> */}
             {finalcode.map((item,key)=><Data data={item}/>)}
-
+            {/* <Data data={"finalcode"}/> */}
         </div>
 
     )
