@@ -67,7 +67,7 @@ export default function Main(props) {
             </div> */}
 
            {/* This is Processing part  */}
-            {finalcode.map((item,key)=><Data data={item}/>)}
+            {finalcode.map((item,key)=><Data data={finalcode[key]} name="hai"/>)}
             {/* <Data data={"finalcode"}/> */}
         </div>
 
