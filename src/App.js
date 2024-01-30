@@ -9,6 +9,7 @@ function App(props) {
   console.log("App props",props);
   return (
     <div >
+      {/* Routing */}
     <BrowserRouter>
       <Navbar/>
       <Routes>

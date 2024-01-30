@@ -2,6 +2,7 @@ import React, { useContext } from "react"
 import { Global_Todo_history } from "./data";
 
 export default function History() {
+    // Storing data using useContext
     const todo_history = useContext(Global_Todo_history);
 
     return (

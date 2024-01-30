@@ -7,6 +7,7 @@ export default function data(props) {
     const todo_data=data;
     return(
         <>
+        {/* Creating  useContext */}
         <Global_Todo_history.Provider value={todo_data}>
             <History/>
         </Global_Todo_history.Provider>
