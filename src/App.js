@@ -18,7 +18,6 @@ function App(props) {
         <Route path='/history' element={<Data value={Global_Todo_history}><History/></Data>} >
         </Route>
       </Routes>
-      {/* <New/> */}
     </BrowserRouter>
 
 
