@@ -70,6 +70,5 @@ export default function Main(props) {
             {/* {finalcode.map((item,key)=><Data data={finalcode[key]} name="hai"/>)} */}
             <Data data="finalcode"/>
         </div>
-
     )
 }
