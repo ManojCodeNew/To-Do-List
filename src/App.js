@@ -19,11 +19,6 @@ function App(props) {
         </Route>
       </Routes>
     </BrowserRouter>
-
-
-    {/* <Data>
-      <History/>
-    </Data> */}
     </div>
   );
 }
