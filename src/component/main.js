@@ -35,7 +35,9 @@ export default function Main(props) {
     //     console.log(e);
     // }
 
-
+const History=()=>{
+    alert(finalcode,"\t")
+}
     // local storage for storing user name
     useEffect(()=>{
     localStorage.setItem('userids',JSON.stringify(finalcode))
@@ -67,8 +69,11 @@ export default function Main(props) {
             </div> */}
 
            {/* This is Processing part  */}
-            {/* {finalcode.map((item,key)=><Data data={finalcode[key]} name="hai"/>)} */}
-            <Data data="finalcode"/>
+            {finalcode.map((item,key)=>
+            <Data data={item} key={key}/>)}
+    
+            {/* <Data data="finalcode" name="Manoj" d={finalcode}/> */}
+            {/* <Data data={History}/> */}
         </div>
     )
 }
