@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import New from "./new";
+
 import Data from "./data";
 import { useState} from "react";
 // ***
@@ -74,6 +75,7 @@ const History=()=>{
     
             {/* <Data data="finalcode" name="Manoj" d={finalcode}/> */}
             {/* <Data data={History}/> */}
+            
         </div>
     )
 }
