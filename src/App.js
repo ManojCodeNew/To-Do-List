@@ -1,7 +1,7 @@
 import './App.css';
 import Navbar from './component/navbar';
 import Data from './component/data.js'
-// import {Global_Todo_history} from './component/data.js'
+import {Global_Todo_history} from './component/data.js'
 import Main from "./component/main.js";
 import  History  from "./component/History.js";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -14,9 +14,14 @@ function App(props) {
       <Navbar/>
       <Routes>
         <Route path='/' element={<Main text="Enter Your Name With Id" Eg="Eg:ABC123"/>}></Route>
-
         {/* This is Processing part  */}
-        <Route path='/history' element={<Data><History/></Data>} >
+        <Route path='/history' element={
+        <Data >
+<Global_Todo_history.Consumer>
+  {(value)=>(
+    <History data={value}/>
+  )}</Global_Todo_history.Consumer>
+          </Data>} >
         </Route>
       </Routes>
     </BrowserRouter>
