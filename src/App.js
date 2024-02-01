@@ -6,7 +6,7 @@ import Main from "./component/main.js";
 import  History  from "./component/History.js";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 function App(props) {
-  console.log("App props",Global_Todo_history);
+  console.log("App props",props);
   return (
     <div >
       {/* Routing */}
