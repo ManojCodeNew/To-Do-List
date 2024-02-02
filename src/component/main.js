@@ -2,17 +2,18 @@ import React, { useEffect } from "react";
 import New from "./new";
 
 import Data from "./data";
-import { useState} from "react";
+import { Global_Todo_history } from "./data";
+import { useState } from "react";
 // ***
 
 export default function Main(props) {
     const [code, setcode] = useState()
-    const getUserIds=()=>{
-        const userids=JSON.parse(localStorage.getItem('userids'))
+    const getUserIds = () => {
+        const userids = JSON.parse(localStorage.getItem('userids'))
         if (userids) {
             return JSON.parse(localStorage.getItem('userids'))
         }
-        else{
+        else {
             return []
         }
     }
@@ -22,8 +23,8 @@ export default function Main(props) {
         setcode(e.target.value)
     }
 
-    const click_for_new=()=>{
-        setfinalcode([...finalcode,code])
+    const click_for_new = () => {
+        setfinalcode([...finalcode, code])
         // console.log(finalcode);
     }
 
@@ -36,21 +37,21 @@ export default function Main(props) {
     //     console.log(e);
     // }
 
-const History=()=>{
-    alert(finalcode,"\t")
-}
+    const History = () => {
+        alert(finalcode, "\t")
+    }
     // local storage for storing user name
-    useEffect(()=>{
-    localStorage.setItem('userids',JSON.stringify(finalcode))
-    },[finalcode])
- 
+    useEffect(() => {
+        localStorage.setItem('userids', JSON.stringify(finalcode))
+    }, [finalcode])
+
     return (
         <div>
             <div className="m-5 pl-3">
                 <label className="font-bold text-2xl">{props.text}</label><hr />
                 <input type="text" className="bg-white m-3 p-3 border-solid border-black border rounded-lg" value={code} placeholder={props.Eg} onChange={onchangecode} />
                 <button className="p-2 bg-green-700 text-white rounded-full" onClick={click_for_new}>New</button>
-                <button onClick={()=>setcode('')} className="p-2 ml-2 bg-red-700 text-white rounded-full">Clear</button>
+                <button onClick={() => setcode('')} className="p-2 ml-2 bg-red-700 text-white rounded-full">Clear</button>
 
             </div>
             {/* <p className="text-center">{code==="1"?<New code={code} />:"Please Enter Your Id"} </p> */}
@@ -59,7 +60,7 @@ const History=()=>{
 
 
             {/* this includes  function  *** */}
-            <p>{finalcode.includes(code)?<New code={code} />:<p className="text-center">Not Found !!!</p>}</p>
+            <p>{finalcode.includes(code) ? <New code={code} /> : <p className="text-center">Not Found !!!</p>}</p>
             {/* <div className="p-2 rounded-lg mt-5">
             <h1 className=" pl-2 m-2 bg-red-900 px-2 py-2  inline-block rounded-md text-white ">Recent Notes</h1>
             <div>
@@ -69,13 +70,12 @@ const History=()=>{
             <button onClick={()=>setfinalcode(' ')}>Clear</button>
             </div> */}
 
-           {/* This is Processing part  */}
-            {/* {finalcode.map((item,key)=>
-            <Data data={item} key={key}/>)}
-     */}
+            {/* This is Processing part  */}
+        
+            {finalcode.map((item,key)=>
+            (<Data data={item} key={key}></Data>
+            ))} 
             {/* <Data data="finalcode" name="Manoj" d={finalcode}/> */}
-            <Data data={History}/>
-            
         </div>
     )
 }
