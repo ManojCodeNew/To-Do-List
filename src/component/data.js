@@ -2,7 +2,7 @@ import React from "react";
 import { createContext } from "react";
 const Global_Todo_history=createContext()
 export default function Data(props){
-    console.log("Data.js",props);
+    console.log("Data.js",props.data);
     return(
         <Global_Todo_history.Provider value={props.data} >
         {props.children}

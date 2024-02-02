@@ -60,7 +60,6 @@ export default function Main(props) {
 
 
             {/* this includes  function  *** */}
-            <p>{finalcode.includes(code) ? <New code={code} /> : <p className="text-center">Not Found !!!</p>}</p>
             {/* <div className="p-2 rounded-lg mt-5">
             <h1 className=" pl-2 m-2 bg-red-900 px-2 py-2  inline-block rounded-md text-white ">Recent Notes</h1>
             <div>
@@ -71,10 +70,23 @@ export default function Main(props) {
             </div> */}
 
             {/* This is Processing part  */}
-        
+            {/*         
             {finalcode.map((item,key)=>
-            (<Data data={item} key={key}></Data>
-            ))} 
+            (
+                <Data data={item} key={key}>
+            <p>{finalcode.includes(code) ? <New code={code} /> : <p className="text-center">Not Found !!!</p>}</p>
+                </Data>
+            ))}  */}
+            <p>
+                {finalcode.includes(code) ? (
+                    <Data data={code} key={code}>
+                        <New code={code} />
+                    </Data>
+                ) : (
+                    <p className="text-center">Not Found !!!</p>
+                )}
+            </p>
+
             {/* <Data data="finalcode" name="Manoj" d={finalcode}/> */}
         </div>
     )
