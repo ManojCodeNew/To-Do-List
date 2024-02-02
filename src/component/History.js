@@ -3,7 +3,7 @@ import { Global_Todo_history } from "./data.js";
 
 export default function History({data}) {
     // Storing data using useContext
-    const todo_history = useContext(Global_Todo_history);
+    // const todo_history = useContext(Global_Todo_history);
     // const data=todo_history.props.children;
 console.log("data",data);
     return (

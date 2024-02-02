@@ -70,11 +70,11 @@ const History=()=>{
             </div> */}
 
            {/* This is Processing part  */}
-            {finalcode.map((item,key)=>
+            {/* {finalcode.map((item,key)=>
             <Data data={item} key={key}/>)}
-    
+     */}
             {/* <Data data="finalcode" name="Manoj" d={finalcode}/> */}
-            {/* <Data data={History}/> */}
+            <Data data={History}/>
             
         </div>
     )
