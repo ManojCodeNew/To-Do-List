@@ -11,7 +11,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Main text="Enter Your Name With Id" Eg="Eg:ABC123" />}></Route>
           {/* This is Processing part  */}
-          <Route path='/history' element={<History data="Hai"/>} />
+          <Route path='/history' element={<History />} />
         </Routes>
     </div>
   );

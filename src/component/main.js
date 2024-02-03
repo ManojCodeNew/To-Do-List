@@ -1,10 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useContext} from "react";
 import New from "./new";
 import { useState } from "react";
-import Context from "../Context/Context";
+import {Global_data} from "../Context/Context";
 // ***
 
 export default function Main(props) {
+    const todo_history=useContext(Global_data);
+    
+
     const [code, setcode] = useState()
     const getUserIds = () => {
         const userids = JSON.parse(localStorage.getItem('userids'))
@@ -25,10 +28,13 @@ export default function Main(props) {
         setfinalcode([...finalcode, code])
         // console.log(finalcode);
     }
-    const History_data_for_sharing=()=>{
-        return finalcode;
-    }
 
+    // Data Sharing to the Context.js
+    const History_data_for_sharing=()=>{
+        // Changing Context.js useState 
+        todo_history.setHistory(finalcode) ;
+    }
+History_data_for_sharing();
     // useRef
     // const useref=useRef();
     // const recentfileclick=(e)=>{
@@ -71,7 +77,6 @@ export default function Main(props) {
             </div> */}
 
             {/* This is Processing part  */}
-            <Context data="History_data_for_sharing"/>
             <p>{finalcode.includes(code) ? <New code={code} /> : <p className="text-center">Not Found !!!</p>}</p>
         </div>
     )

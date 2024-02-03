@@ -10,7 +10,7 @@ const todo_history=useContext(Global_data)
     
     return (
         <div className="text-3xl">
-            ...........................SDP{todo_history}
+            ...........................SDP{todo_history.history}
         </div>
     )
 }
