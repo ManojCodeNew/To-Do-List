@@ -28,11 +28,10 @@ export default function Main(props) {
         setfinalcode([...finalcode, code])
         // console.log(finalcode);
     }
-
     // Data Sharing to the Context.js
     const History_data_for_sharing=()=>{
         // Changing Context.js useState 
-        todo_history.setHistory(finalcode) ;
+    todo_history.setHistory(finalcode);
     }
 History_data_for_sharing();
     // useRef
@@ -44,9 +43,7 @@ History_data_for_sharing();
     //     console.log(e);
     // }
 
-    const History = () => {
-        alert(finalcode, "\t")
-    }
+
     // local storage for storing user name
     useEffect(() => {
         localStorage.setItem('userids', JSON.stringify(finalcode))
