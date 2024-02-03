@@ -1,26 +1,17 @@
 import './App.css';
-import Navbar from './component/navbar';
-// import Data from './data.js'
-import Data, { Global_Todo_history } from './component/data.js'
-import Main from "./component/main.js";
+import NavBar from './component/Navbar.js';
+import Main from "./component/Main.js";
 import History from "./component/History.js";
 import { Route, Routes } from "react-router-dom";
-import { useContext } from 'react';
-function App(props) {
-  const todo_history = useContext(Global_Todo_history)
-  console.log("App props", todo_history);
+function App() {
   return (
     <div >
       {/* Routing */}
-        <Navbar />
+        <NavBar/>
         <Routes>
           <Route path='/' element={<Main text="Enter Your Name With Id" Eg="Eg:ABC123" />}></Route>
           {/* This is Processing part  */}
-          {/* <Route path='/history/:data' element={
-            <Data>
-                <History data={useContext(Global_Todo_history)}/>
-            </Data>
-          } /> */}
+          <Route path='/history' element={<History data="Hai"/>} />
         </Routes>
     </div>
   );

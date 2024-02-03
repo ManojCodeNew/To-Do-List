@@ -1,11 +1,16 @@
 import React from "react"
+import Context from "../Context/Context";
+import {Global_data} from "../Context/Context"
+import { useContext } from "react";
 
-export default function History(props) {
+
+export default function History() {
     // Storing data using useContext
-    console.log("history.js",props);
+const todo_history=useContext(Global_data)
+    
     return (
         <div className="text-3xl">
-            ...........................SDP{props.data}
+            ...........................SDP{todo_history}
         </div>
     )
 }

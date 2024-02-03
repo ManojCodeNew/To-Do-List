@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-export default function navbar() {
+export default function Navbar() {
     return (
         <>
             <div className="bg-blue-900  rounded-md ">

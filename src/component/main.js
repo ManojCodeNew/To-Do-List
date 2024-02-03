@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
 import New from "./new";
-
-import Data from "./data";
-import { Global_Todo_history } from "./data";
 import { useState } from "react";
+import Context from "../Context/Context";
 // ***
 
 export default function Main(props) {
@@ -26,6 +24,9 @@ export default function Main(props) {
     const click_for_new = () => {
         setfinalcode([...finalcode, code])
         // console.log(finalcode);
+    }
+    const History_data_for_sharing=()=>{
+        return finalcode;
     }
 
     // useRef
@@ -70,24 +71,8 @@ export default function Main(props) {
             </div> */}
 
             {/* This is Processing part  */}
-            {/*         
-            {finalcode.map((item,key)=>
-            (
-                <Data data={item} key={key}>
+            <Context data="History_data_for_sharing"/>
             <p>{finalcode.includes(code) ? <New code={code} /> : <p className="text-center">Not Found !!!</p>}</p>
-                </Data>
-            ))}  */}
-            <p>
-                {finalcode.includes(code) ? (
-                    <Data data={code} key={code}>
-                        <New code={code} />
-                    </Data>
-                ) : (
-                    <p className="text-center">Not Found !!!</p>
-                )}
-            </p>
-
-            {/* <Data data="finalcode" name="Manoj" d={finalcode}/> */}
         </div>
     )
 }
