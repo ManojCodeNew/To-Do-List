@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-// import Main from './main'
 export default function New(props) {
     // console.log(props);
     // Storing individuals data

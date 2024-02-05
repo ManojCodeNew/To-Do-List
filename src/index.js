@@ -8,6 +8,7 @@ import Context from './Context/Context.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  // Calling Context File Now all file's are children of Context
   <Context>
   <React.StrictMode>
     <BrowserRouter>
