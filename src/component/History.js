@@ -11,7 +11,7 @@ export default function History() {
     const todo_history = useContext(Global_data)
     const History_Container=[todo_history.data];
     console.log(History_Container);
-    console.log("Array conformation",Array.isArray(History_Container))
+    // console.log("Array conformation",Array.isArray(History_Container))
     const Click_handle=(e)=>{
     const Clicked_item_location=e.target.value;
     const clicked_data=History_Container[0][0][Clicked_item_location]
@@ -28,7 +28,7 @@ export default function History() {
                 <div className="text-xl p-1 mt-5 rounded-lg hover:bg-gray-200 hover:border-white cursor-pointer " >
 
                     {/* Passing */}
-                <NavLink className="hover:font-semibold  " to='/' value={key}>{item} </NavLink> 
+                <NavLink className="hover:font-semibold  " to='/' ><button onClick={Click_handle} value={key}>{item} </button></NavLink> 
                 </div>
             )}
             {/* <svg class="w-[44px] h-[44px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">

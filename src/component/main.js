@@ -8,7 +8,7 @@ export default function Main(props) {
     const todo_history=useContext(Global_data);
     
 
-    const [code, setcode] = useState()
+    const [code, setcode] = useState(todo_history.clicked_item)
     const getUserIds = () => {
         const userids = JSON.parse(localStorage.getItem('userids'))
         if (userids) {
