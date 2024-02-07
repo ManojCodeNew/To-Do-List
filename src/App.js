@@ -1,5 +1,5 @@
 import './App.css';
-import NavBar from './component/Navbar.js';
+import NavBar from './component/Navbar1.js';
 import Main from './component/Main.js';
 import History from "./component/History.js";
 // import Profile from './component/Profile.js';
