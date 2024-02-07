@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+// import Profile from './component/Profile.js';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import Context from './Context/Context.js';
@@ -13,6 +14,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
     <App />
+    {/* <Profile/> */}
     </BrowserRouter>
   </React.StrictMode>
   </Context>

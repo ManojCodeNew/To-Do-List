@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 export default function New(props) {
-    // console.log(props);
+    
     // Storing individuals data
     const getitem = () => {
         const item = JSON.parse(localStorage.getItem(`${props.code}`))
@@ -14,13 +14,19 @@ export default function New(props) {
         }
 
     }
+    // This useState represent the current data of input box
     const [text, settext] = useState();
-    const [savedtext, setsavedtext] = useState(getitem())
 
+    // This useState store's a saved data
+    const [savedtext, setsavedtext] = useState(getitem)
 
-    const Onchangetext = (event) => {//here event is variable for storing target.value data
+    // Storing Current user written text on a input box
+    const Onchangetext = (event) => {
+        //here event is variable for storing target.value data
         settext(event.target.value)
     }
+
+    // Save Section
     const save = () => {
         setsavedtext([...savedtext, text])
     }
