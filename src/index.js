@@ -1,8 +1,7 @@
-import React, { useContext } from 'react';
+import React  from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-// import Profile from './component/Profile.js';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import Context from './Context/Context.js';

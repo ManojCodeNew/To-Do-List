@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { createContext } from 'react';
-const Global_data = createContext();
+const  GlobalData= createContext();
 
 export default function Context({ children }) {
     const [history,setHistory]=useState("Empty")
@@ -9,8 +9,8 @@ export default function Context({ children }) {
     
     const [clicked_item,set_Clicked_Item]=useState(null);
 console.log("history clicked data",clicked_item);
-    return <Global_data.Provider value={{data,setHistory,set_Clicked_Item,clicked_item}}>
+    return <GlobalData.Provider value={{data,setHistory,set_Clicked_Item,clicked_item}}>
         {children}
-    </Global_data.Provider>
+    </GlobalData.Provider>
 }
-export { Global_data };
+export { GlobalData };

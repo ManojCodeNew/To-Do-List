@@ -1,11 +1,11 @@
 import React, { useEffect,useContext} from "react";
 import New from "./new";
 import { useState } from "react";
-import {Global_data} from "../Context/Context";
+import {GlobalData} from "../Context/Context";
 // ***
 
 export default function Main(props) {
-    const todo_history=useContext(Global_data);
+    const todo_history=useContext(GlobalData);
     
 
     const [code, setcode] = useState(todo_history.clicked_item)

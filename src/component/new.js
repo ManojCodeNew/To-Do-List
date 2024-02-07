@@ -46,8 +46,10 @@ export default function New(props) {
     }
 
     // set the saved text to the local storage
+    // eslint-disable-next-line 
     useEffect(() => {
         localStorage.setItem(`${props.code}`, JSON.stringify(savedtext))
+        // eslint-disable-next-line
     }, [savedtext])
 
     return (

@@ -1,6 +1,5 @@
 import React from "react"
-import Context from "../Context/Context";
-import { Global_data } from "../Context/Context"
+import { GlobalData } from "../Context/Context"
 import { useContext } from "react";
 
 import { NavLink } from "react-router-dom";
@@ -8,7 +7,7 @@ import { NavLink } from "react-router-dom";
 
 export default function History() {
     // Storing data using useContext
-    const todo_history = useContext(Global_data)
+    const todo_history = useContext(GlobalData)
     const History_Container=[todo_history.data];
     console.log(History_Container);
     // console.log("Array conformation",Array.isArray(History_Container))

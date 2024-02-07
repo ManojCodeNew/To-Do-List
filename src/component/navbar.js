@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-// import Dropdownicon from './ddicon.png'
 export default function Navbar() {
     const [visible, setvisible] = useState(false)
 
     // drop down clicking section 
     const dropdownClick = () => {
         // once click button then it shows a list one more click it not shows 
-        if (visible == false) {
+        if (visible === false) {
             setvisible(true)
         }
         else {
