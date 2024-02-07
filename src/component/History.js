@@ -17,9 +17,15 @@ export default function History() {
     const clicked_data=History_Container[0][0][Clicked_item_location]
     todo_history.set_Clicked_Item(clicked_data)
    
-    console.log("On Click");
     // return d
     }
+    let fetchBatteryStatus = async () => {
+        let battery = await navigator.getBattery();
+        const decimalNumber = battery.level;
+        const percentage = (decimalNumber * 100)+ '%';
+    console.log("On Battery",percentage);
+    }
+fetchBatteryStatus();
     return (
         <div className="mt-5 ">
             <h2 className="pl-4">{"Manoj"} To Do History</h2>
