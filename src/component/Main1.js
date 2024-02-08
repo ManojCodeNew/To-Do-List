@@ -1,14 +1,17 @@
-import React, { useEffect,useContext} from "react";
+import React, { useEffect, useContext } from "react";
 import New from "./new";
 import { useState } from "react";
-import {GlobalData} from "../Context/Context";
-// ***
+// Import createContext 
+import { GlobalData } from "../Context/Context";
+
 
 export default function Main(props) {
-    const todo_history=useContext(GlobalData);
-    
+    const todo_history = useContext(GlobalData);
 
+    // User To Do text
     const [code, setcode] = useState(todo_history.clicked_item)
+
+    // UserIds operation's
     const getUserIds = () => {
         const userids = JSON.parse(localStorage.getItem('userids'))
         if (userids) {
@@ -26,23 +29,14 @@ export default function Main(props) {
 
     const click_for_new = () => {
         setfinalcode([...finalcode, code])
-        // console.log(finalcode);
     }
-    // Data Sharing to the Context.js
-    const History_data_for_sharing=()=>{
-        // Changing Context.js useState 
-    todo_history.setHistory(finalcode);
-    }
-History_data_for_sharing();
-    // useRef
-    // const useref=useRef();
-    // const recentfileclick=(e)=>{
-    //     const clicked_data=useref.current.textContent;
-    //     // console.log(clicked_data);
-    //     setcode(clicked_data)
-    //     console.log(e);
-    // }
 
+    // Data Sharing to the Context.js
+    const History_data_for_sharing = () => {
+        // Changing Context.js useState 
+        todo_history.setHistory(finalcode);
+    }
+    History_data_for_sharing();
 
     // local storage for storing user name
     useEffect(() => {
@@ -53,25 +47,15 @@ History_data_for_sharing();
         <div>
             <div className="m-5 pl-3">
                 <label className="font-bold text-2xl">{props.text}</label><hr />
-                <input type="text" className="bg-white m-3 p-3 border-solid border-black border rounded-lg" value={code} placeholder={props.Eg} onChange={onchangecode} />
+                <input type="text" className="bg-white m-3 p-3 border-solid border-black border hover:shadow-2xl  rounded-lg" value={code} placeholder={props.Eg} onChange={onchangecode} />
+
+
                 <button className="p-2 bg-green-700 text-white rounded-full" onClick={click_for_new}>New</button>
+
+                {/* Clear section */}
                 <button onClick={() => setcode('')} className="p-2 ml-2 bg-red-700 text-white rounded-full">Clear</button>
 
             </div>
-            {/* <p className="text-center">{code==="1"?<New code={code} />:"Please Enter Your Id"} </p> */}
-            {/* {code===finalcode?<New code={code} />:"Please Enter Your Id"} */}
-            {/* {(finalcode.filter((item)=>item===code))?<New/>:"Sorry Found"} */}
-
-
-            {/* this includes  function  *** */}
-            {/* <div className="p-2 rounded-lg mt-5">
-            <h1 className=" pl-2 m-2 bg-red-900 px-2 py-2  inline-block rounded-md text-white ">Recent Notes</h1>
-            <div>
-            {finalcode.map((item,key)=><p onClick={()=>setcode(item)} className="m-2 p-1 cursor-pointer rounded-lg hover:text-black hover:font-bold hover:bg-gray-400 border border-solid border-gray-400 text-black inline-block active">{item}</p>)}
-
-            </div>
-            <button onClick={()=>setfinalcode(' ')}>Clear</button>
-            </div> */}
 
             {/* This is Processing part  */}
             <p>{finalcode.includes(code) ? <New code={code} /> : <p className="text-center">Not Found !!!</p>}</p>

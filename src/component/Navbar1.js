@@ -15,12 +15,15 @@ export default function Navbar() {
     }
     return (
         <>
+            {/* Nav Bar */}
             <div className="bg-blue-900  rounded-md pb-8  ">
                 <NavLink to='/' className="p-3 text-white text-2xl font-bold  ">TO DO LIST
                     <button className="text-yellow-300 text-sm cursor-none">NEW</button></NavLink>
             </div>
-            <h3 className="cursor-pointer text-black text-right flex justify-end pr-12" onClick={dropdownClick}>Drop</h3>
 
+            <h3 className="cursor-pointer text-black text-right flex justify-end pr-12  " onClick={dropdownClick}>Drop</h3>
+
+            {/* Drop Down List  */}
             <div className=" text-right text-white pb-4">
                 {visible === true ?
                     <div className="dark:bg-slate-600 ml-5  mt-4 p-3  inline-grid rounded-md hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white mr-5">

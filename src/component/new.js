@@ -58,9 +58,9 @@ export default function New(props) {
             <div className=" m-5 text-center">
 
                 {/* Lising Section */}
-                <input value={text} onChange={Onchangetext} type="text" className="border-black m-3 p-3 rounded-full " placeholder="Enter Your Text..." />
-                <button className="text-white bg-green-900 p-2 rounded-lg hover:rounded-full" onClick={save}>Save</button>
-                <button className="bg-red-600 rounded-lg hover:rounded-full text-white p-2  ml-3" onClick={clear}>Clear</button>
+                <input value={text} onChange={Onchangetext} type="text" className="border-black m-3 p-3 rounded-full hover:shadow-lg hover:shadow-cyan-100/50 " placeholder="Enter Your Text..." />
+                <button className="text-white bg-green-900 p-2 rounded-lg hover:rounded-full " onClick={save}>Save</button>
+                <button className="bg-red-600 rounded-lg hover:rounded-full text-white p-2  ml-3 " onClick={clear}>Clear</button>
 
                 {/* List main heading */}
                 <div className="text-left">
@@ -76,7 +76,7 @@ export default function New(props) {
                             <h1 className="text-white p-1 text-left" >{saved}</h1>
                         </div>
                         {/* Remove data */}
-                        <button onClick={remove} value={saved} className="bg-red-600 text-black hover:bg-white  p-2 rounded-lg hover:rounded-full ">Remove</button>
+                        <button onClick={remove} value={saved} className="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Remove</button>
                     </div>
                 ))}
             </div>
