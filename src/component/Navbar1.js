@@ -15,10 +15,9 @@ export default function Navbar() {
     }
     return (
         <>
-            <div className="bg-blue-900  rounded-md pb-8 ">
-                <NavLink to='/' className="p-3 text-white text-2xl font-bold text-left pt-5 ">TO DO LIST
+            <div className="bg-blue-900  rounded-md pb-8  ">
+                <NavLink to='/' className="p-3 text-white text-2xl font-bold  ">TO DO LIST
                     <button className="text-yellow-300 text-sm cursor-none">NEW</button></NavLink>
-
             </div>
             <h3 className="cursor-pointer text-black text-right flex justify-end pr-12" onClick={dropdownClick}>Drop</h3>
 

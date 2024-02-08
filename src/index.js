@@ -13,7 +13,6 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
     <App />
-    {/* <Profile/> */}
     </BrowserRouter>
   </React.StrictMode>
   </Context>
