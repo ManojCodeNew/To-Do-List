@@ -18,7 +18,7 @@ export default function History() {
     
     return (
         <div className="mt-5 ">
-            <h2 className="pl-4">To Do History</h2>
+            <h2 className="pl-4 font-medium">To Do History</h2><hr className="mt-3 border-gray-600 h-3"/>
             {/* One by one display */}
             {History_Container.flat().flat().map((item, key) =>
                 <div className="text-xl p-1 mt-5 rounded-lg hover:bg-gray-200 hover:border-white cursor-pointer " >
