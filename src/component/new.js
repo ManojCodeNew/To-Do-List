@@ -34,7 +34,6 @@ export default function New(props) {
     // Remove Section
     const remove = (e) => {
         let data = e.target.value
-        alert("Data Remove Successfully..")
         // the filter function used to filter the array using some condition
         const updatedsaveditem = savedtext.filter((item) => item !== data);
         setsavedtext(updatedsaveditem)
@@ -55,12 +54,12 @@ export default function New(props) {
     return (
         <div className="bg-gray-900  drop-shadow-3xl shadow-2xl backdrop-blur-10 p-10 rounded-xl">
             <h3 className="text-white text-center font-serif font-extrabold text-2xl">TO DO LIST</h3>
-            <div className=" m-5 text-center">
+            <div className=" mt-10 text-center">
 
                 {/* Lising Section */}
-                <input value={text} onChange={Onchangetext} type="text" className="border-black m-3 p-3 rounded-full hover:shadow-lg hover:shadow-cyan-100/50 " placeholder="Enter Your Text..." />
-                <button className="text-white bg-green-900 p-2 rounded-lg hover:rounded-full " onClick={save}>Save</button>
-                <button className="bg-red-600 rounded-lg hover:rounded-full text-white p-2  ml-3 " onClick={clear}>Clear</button>
+                <textarea value={text} onChange={Onchangetext} type="text" cols='90' rows='10' className="border-white  text-gray-300 ml-5 p-1  rounded-md hover:shadow-lg hover:shadow-cyan-100/50 " placeholder="Enter Your Text..." style={{ backgroundColor: 'transparent' }}/>
+                <button className="text-white bg-green-900 p-2 rounded-lg hover:rounded-full mt-5  " onClick={save}>Save</button>
+                <button className="bg-red-600 rounded-lg hover:rounded-full text-white p-2  ml-3  " onClick={clear}>Clear</button>
 
                 {/* List main heading */}
                 <div className="text-left">
@@ -71,7 +70,7 @@ export default function New(props) {
                 {/* Saving user created data */}
                 {savedtext.map((saved, key) => (
                     <div className="text-white">
-                        <div className="border-gray-100 border-solid border p-3 m-3 rounded-lg hover:rounded-full">
+                        <div className="border-gray-100 border-solid border p-3 m-3 rounded-lg ">
                             {/* Dispaly Saved Data */}
                             <h1 className="text-white p-1 text-left" >{saved}</h1>
                         </div>
